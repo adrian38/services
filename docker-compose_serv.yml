@@ -1,0 +1,32 @@
+version: "3.5"
+
+services:
+
+  mqttbbr:
+    image: eclipse-mosquitto
+    restart: "unless-stopped"
+    env_file:
+      - .physics_env
+    volumes:
+      - "./persist/mqttbroker:/persist/"
+    ports:
+      - 8883:8883
+    networks:
+      - physicsServices
+
+  mongodb:
+    image: mongo
+    restart: "unless-stopped"
+    ports:
+      - "27017:27017"
+    env_file:
+      - ./.physics_env
+    volumes:
+      - "./persist/mongodb:/data/db"
+    networks:
+      - physicsServices
+
+networks:
+  physicsServices:
+    driver: bridge
+    name: physicsServices
