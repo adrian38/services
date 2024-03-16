@@ -9,6 +9,7 @@ services:
       - .physics_env
     volumes:
       - "./persist/mqttbroker:/persist/"
+      - "./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf"
     ports:
       - 8883:8883
     networks:
