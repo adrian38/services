@@ -25,6 +25,8 @@ services:
             - .physics_env
         volumes:
             - './persist/mongodb:/data/db'
+            - './docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro'
+
         networks:
             - physicsServices
 
