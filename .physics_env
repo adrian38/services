@@ -4,8 +4,9 @@ MONGO_INITDB_ROOT_PASSWORD=physics123456789
 MONGO_INITDB_DATABASE=physics
 
 # MQTT
-MQTT_USERNAME=usuarioEjemplo
-MQTT_PASSWORD=contraseñaEjemplo
+MQTT_USERNAME=physics_user
+MQTT_PASSWORD=physics_password
+MQTT_PORT=8883
 
 
 

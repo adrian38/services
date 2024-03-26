@@ -2,17 +2,14 @@ version: '3.5'
 
 services:
     mqttbbr:
-        image: eclipse-mosquitto
+        build: .
         restart: 'unless-stopped'
         env_file:
             - .physics_env
-        volumes:
-            - './persist/mqttbroker:/persist/'
-            - './mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf'
-
         ports:
             - 8883:8883
-
+        volumes:
+            - './persist/mqttbroker:/persist/'
         networks:
             - physicsServices
 

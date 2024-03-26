@@ -8,7 +8,7 @@ db.createUser(
         roles: [{ role: 'readWrite', db: 'physics' }],
     },
 );
-db.createCollection('users');
+db.createCollection('user');
 
 
 print('END #################################################################');
